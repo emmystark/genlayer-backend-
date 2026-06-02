@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 import mongoose, { Schema, model } from 'mongoose';
 import { v2 as cloudinary } from 'cloudinary';
 import { Readable } from 'stream';
-import Groq from 'groq-sdk';
+import { Groq } from 'groq-sdk';
 import fs from 'fs/promises';
 import path from 'path';
 
