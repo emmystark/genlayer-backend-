@@ -554,9 +554,7 @@ const uploadMiddleware = (fieldName: string = 'media') => upload.single(fieldNam
 
 app.use((req: any, res: any, next: any) => {
   const allowed = [
-    process.env.FRONTEND_URL || 'http://localhost:3000',
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
+    process.env.FRONTEND_URL 
   ];
   const origin = req.headers.origin;
   if (!origin || allowed.includes(origin)) {
@@ -1030,8 +1028,4 @@ app.get('/api/stats', async (_req: Request, res: Response) => {
 });
 
 // ── Start ─────────────────────────────────────────────────────────────────────
-const PORT = parseInt(process.env.PORT || '3001', 10);
-app.listen(PORT, () => {
-  console.log(` Server on http://localhost:${PORT}`);
-  console.log(`   Contract: ${CONTRACT || '(NEXT_PUBLIC_CONTRACT_ADDRESS not set)'}`);
-});
+export default app;
