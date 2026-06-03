@@ -10,6 +10,7 @@ import { Readable } from 'stream';
 import { Groq } from 'groq-sdk';
 import fs from 'fs/promises';
 import path from 'path';
+import { fileURLToPath } from 'node:url';
 
 
 import ffmpeg from 'fluent-ffmpeg';
@@ -1028,10 +1029,11 @@ app.get('/api/stats', async (_req: Request, res: Response) => {
 });
 
 // ── Start ─────────────────────────────────────────────────────────────────────
-if (require.main === module) {
-  const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
   app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`🚀 Server running on port ${PORT}`);
   });
 }
 
