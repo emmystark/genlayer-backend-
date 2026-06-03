@@ -1028,4 +1028,11 @@ app.get('/api/stats', async (_req: Request, res: Response) => {
 });
 
 // ── Start ─────────────────────────────────────────────────────────────────────
+if (require.main === module) {
+  const PORT = process.env.PORT || 3001;
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
 export default app;
