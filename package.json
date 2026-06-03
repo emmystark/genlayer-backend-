@@ -4,11 +4,11 @@
   "description": "GenLayer Chronicles backend — Express + Groq + Cloudinary + MongoDB",
   "main": "dist/server.js",
   "type": "module",
-  "scripts": {
-    "build": "tsc",
-    "start": "npm run build && node dist/server.js",
-    "dev": "ts-node-dev --respawn --transpile-only server.ts"
-  },
+ "scripts": {
+  "build": "tsc",
+  "start": "node dist/server.js",
+  "dev": "ts-node-dev --respawn --transpile-only server.ts"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
